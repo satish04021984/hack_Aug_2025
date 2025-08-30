@@ -1,136 +1,41 @@
-# 🚀 Project Name: AI Orchestration for Email & Document Triage Routing🌟
+The document outlines a technical challenge focused on building an AI-powered system that translates natural language banking requests into accurate SQL queries, enabling non-technical staff to access financial transaction data efficiently.
 
-## Description
-This project implements an AI-powered solution for automating the classification, data extraction, and routing of emails in a commercial bank's lending service team. The system processes incoming emails and attachments, extracts key information, classifies the emails into predefined request types, and routes them to appropriate teams.
+Core Requirements
+The system must understand and process natural language banking queries and convert them into correct, executable SQL statements for an SQLite database.
 
-## 📌 Table of Contents
-- [Introduction](#introduction)
-- [Demo](#demo)
-- [Inspiration](#inspiration)
-- [What It Does](#what-it-does)
-- [How We Built It](#how-we-built-it)
-- [Challenges We Faced](#challenges-we-faced)
-- [How to Run](#how-to-run)
-- [Tech Stack](#tech-stack)
-- [Team](#team)
+It must support common SQL operations (SELECT, WHERE, JOIN, GROUP BY, aggregation) and be robust in handling errors and detecting ambiguity in user requests.
 
----
+The AI should request clarifications in ambiguous cases and handle multi-turn conversations, maintaining context across interactions.
 
-## 🎯 Introduction
-The **AI Orchestration for Email & Document Triage Routing ** 
+Technical Stack and Implementation
+Python 3.10+ for backend, SQLite as the database, and AI/ML frameworks such as LangChain or LangGraph powered by OpenAI or local models.
 
+Streamlit (or Gradio) for the frontend interface, requirement management via uv or requirements.txt.
 
+Code must run locally only, with setup scripts initializing the database, and should include at least 60% automated test coverage (preferably with Pytest).
 
-## 🎥 Demo
-🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
-🖼️ Screenshots:
-[Screenshot 1](link-to-image)
----
-Here are some screenshots of the application:
+Proper security practices are mandated, like protecting against SQL injection and managing sensitive data carefully.
 
-1. **Dashboard**:
-   ![Dashboard Screenshot](https://via.placeholder.com/800x400?text=Dashboard+Screenshot)
+Submission and Documentation
+Submissions require a GitHub repository with properly structured folders and well-documented code.
 
-2. **Feedback UI**:
-   ![Feedback Screenshot](https://via.placeholder.com/800x400?text=Feedback+UI+Screenshot)
+A design/architectural document is required, detailing the SQL generation approach, agent architecture, challenges faced, performance metrics, strengths and limitations.
 
-3. **Jira Integration**:
-   ![Jira Screenshot](https://via.placeholder.com/800x400?text=Jira+Integration+Screenshot)
+A complete README.md should provide setup and usage instructions.
 
-## 💡 Inspiration
-This project was created during the [Technology Hackathon 2025] to showcase how AI-driven workflows can improve manual auditing processes.
+Evaluation Criteria
+Functional: Accuracy of SQL translation, support for complex queries, effective ambiguity resolution, contextual conversation handling.
 
-## ⚙️ What It Does
+Technical: Agent design, SQL generation efficiency, code quality, error handling, test coverage, security measures.
 
-## Features
-- **Anomaly Detection**:
-   - Identifies mismatches in financial datasets.
-   - Highlights `PRICE` and `QUANTITY` discrepancies.
-- **Feedback Collection**:
-   - Interactive UI for reconcilers to resolve mismatches manually.
-   - Supports custom feedback for anomalies.
-- **Jira Integration**:
-   - Logs anomalies as tasks or tickets in Jira.
-   - Fetches resolutions and updates results in real-time.
-- **Reporting**:
-   - Generates CSV reports for resolved anomalies, including user feedback.
+User Experience: Frontend usability, clarity of results (including visualizations), and quality of documentation.
 
-## 🛠️ How We Built It
+Bonus: Novel agent architecture, extra tool/API integrations, use of uv, and outstanding performance on edge cases.
 
-3. **Environment Variables**:
-   - Create a `.env` file in the root folder and add the following environment variables:
-     ```
-     JIRA_URL=https://yourcompany.atlassian.net
-     JIRA_USERNAME=your_email@example.com
-     JIRA_API_TOKEN=your_token
-     DB_CONNECTION_STRING=<your_database_connection_string>
-     ```
+Notable Reminders
+Automated evaluation is strict about folder structure—misplacement may result in disqualification regardless of feature completeness.
 
-4. **Run the Application**:
-   - Start the backend:
-     ```bash
-     python app.py
-     ```
-   - Start the Streamlit frontend:
-     ```bash
-     streamlit run app.py
-     ```
+Avoid putting all files in the root folder, deviating from the template, missing documentation, or submitting overly long demo videos.
 
-5. **Access the Service**:
-   Open your browser and navigate to:
-   ```
-   http://127.0.0.1:8501
-   ```
-
----
-
-## Usage
-1. **Upload Dataset**:
-   Upload your financial dataset (e.g., a CSV file) via the provided interface.
-   
-2. **Review Anomalies**:
-   - View auto-detected mismatches in the dataset.
-   - Resolve discrepancies by replacing values or adding manual comments.
-   
-3. **Jira Integration**:
-   - The app automatically logs detected anomalies as tasks in Jira.
-   - Team members can collaborate and provide feedback via Jira tickets.
-
-4. **Generate Report**:
-   - Save the final reconciliation dataset with both user feedback and Jira resolutions.
-
-
-## 🚧 Challenges We Faced
-Using the OPEN API was a challenging task as it required a key.
-
-## 🏃 How to Run
-1.## Setup Instructions
-Follow these steps to set up the project locally.
-
-1. **Clone the Repository**:
-   ```bash
-   git clone (https://github.com/ewfx/sradg-new-comers)
-   cd AI-Reconciliation-Tool
-   ```
-
-2. **Set Up Dependencies**:
-   - Install Python dependencies:
-     ```bash
-     pip install -r requirements.txt
-     ```
-   - Install Node.js dependencies (if required):
-     ```bash
-     npm install
-     ```
-
-## 🏗️ Tech Stack
-- 🔹 Frontend: - Streamlit (for user interface)
-- 🔹 Backend:  Flask RESTful API
-- 🔹 Database: PostgreSQL
-- 🔹 Integration Tools: Jira REST API, Pandas
-- 🔹 Other: OpenAI API , Jupyter Notebooks (for exploratory data analysis)
-
-## 👥 Team
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+Summary:
+The document describes a banking-focused AI challenge to develop a natural language-to-SQL query system using modern Python, SQLite, and agent-based architectures, with rigorous requirements for error handling, ambiguity resolution, security, documentation, and test coverage. Proper folder structure and clear documentation are critical for successful automated evaluation
